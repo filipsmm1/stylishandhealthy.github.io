@@ -302,40 +302,6 @@ ul { list-style: none; }
   gap: 14px;
 }
 
-/* ============================================================
-   MARQUEE STRIP
-   ============================================================ */
-.marquee-strip {
-  background: var(--black);
-  height: 60px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.marquee-track {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 22s linear infinite;
-}
-
-.marquee-track span {
-  font-family: var(--font-accent);
-  font-size: 16px;
-  letter-spacing: 3px;
-  color: var(--cream);
-  padding: 0 20px;
-}
-
-.marquee-track .sep {
-  color: var(--gold);
-  padding: 0 4px;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
 
 /* ============================================================
    FEATURED ARTICLE
