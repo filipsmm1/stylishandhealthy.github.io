@@ -3,46 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Primary SEO -->
-  <title>Blog — Skincare, Wellness &amp; Self-Care Essays | Stylish and Healthy</title>
-  <meta name="description" content="Skincare routines, wellness habits, mindset essays, and self-care guides for the woman who holds herself to a higher standard.">
-  <meta name="keywords" content="skincare blog, wellness articles, self-care essays, morning routine, mindset, healthy habits">
-  <meta name="author" content="Stylish and Healthy">
+  <title>Blog — Stylish and Healthy</title>
+  <meta name="description" content="Skincare routines, wellness habits, mindset essays, and self-care guides.">
+  <meta name="keywords" content="skincare blog, wellness articles, self-care essays, morning routine, mindset">
   <link rel="canonical" href="https://stylishandhealthy.com/blog.html">
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://stylishandhealthy.com/blog.html">
-  <meta property="og:title"       content="Blog — Skincare, Wellness &amp; Self-Care Essays | Stylish and Healthy">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Stylish and Healthy">
   <meta property="og:description" content="Essays and guides on skincare, wellness, mindset, and self-care.">
-  <meta property="og:image"       content="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80">
-  <meta property="og:site_name"   content="Stylish and Healthy">
-
-  <!-- Twitter -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Blog | Stylish and Healthy">
-  <meta name="twitter:description" content="Essays and guides on skincare, wellness, mindset, and self-care.">
-  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80">
-
-  <!-- Mailchimp popup -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e33059783dca94dc78ba9c2cf/cd90e839a2776072868d7fd83.js");</script>
-
   <link rel="stylesheet" href="css/style.css">
   <script src="js/posts.js"></script>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════════════════════ -->
   <nav class="nav scrolled">
     <a href="index.html" class="nav__logo" style="color:var(--black);">Stylish &amp; Healthy</a>
     <ul class="nav__links">
-      <li><a href="blog.html"   class="nav__link" style="color:var(--black);">BLOG</a></li>
-      <li><a href="shop.html"   class="nav__link" style="color:var(--black);">SHOP</a></li>
+      <li><a href="blog.html" class="nav__link" style="color:var(--black);">BLOG</a></li>
+      <li><a href="shop.html" class="nav__link" style="color:var(--black);">SHOP</a></li>
       <li><a href="index.html#about" class="nav__link" style="color:var(--black);">ABOUT</a></li>
-      <li><a href="#"           class="nav__link" style="color:var(--black);">SEARCH</a></li>
     </ul>
     <button class="nav__hamburger" aria-label="Open menu">
       <span style="background:var(--black);"></span>
@@ -54,24 +35,17 @@
   <div class="nav__overlay">
     <button class="nav__overlay-close">CLOSE ✕</button>
     <nav class="nav__overlay-links">
-      <a href="blog.html"       class="nav__overlay-link">Blog</a>
-      <a href="shop.html"       class="nav__overlay-link">Shop</a>
+      <a href="blog.html" class="nav__overlay-link">Blog</a>
+      <a href="shop.html" class="nav__overlay-link">Shop</a>
       <a href="index.html#about" class="nav__overlay-link">About</a>
-      <a href="#"               class="nav__overlay-link">Search</a>
     </nav>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════
-       PAGE HERO
-  ═══════════════════════════════════════════════════════════ -->
   <div class="page-hero">
     <p class="page-hero__eyebrow">THE ARCHIVE</p>
     <h1 class="page-hero__title">Essays &amp; Guides</h1>
   </div>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FILTER BAR
-  ═══════════════════════════════════════════════════════════ -->
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">ALL</button>
     <button class="filter-btn" data-filter="skincare">SKINCARE</button>
@@ -81,45 +55,28 @@
     <button class="filter-btn" data-filter="self-care">SELF-CARE</button>
   </div>
 
-  <section class="blog-page-grid" style="background:var(--cream);">
-    <div style="max-width:1400px;margin:0 auto;padding:64px 48px;">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;" id="blog-grid-all">
-        <!-- Populated from js/posts.js -->
+  <section style="background:var(--cream);padding:64px 48px;">
+    <div style="max-width:1400px;margin:0 auto;">
+      <div id="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;">
+        <p style="grid-column:1/-1;font-family:var(--font-display);font-style:italic;font-size:20px;color:rgba(13,11,8,0.35);">Loading posts...</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       NEWSLETTER
-  ═══════════════════════════════════════════════════════════ -->
   <section class="newsletter">
     <h2 class="newsletter__title">The Weekly Ritual</h2>
     <p class="newsletter__sub">Skincare notes, wellness habits, and the things worth knowing — straight to your inbox.</p>
-    <form
-      action="https://wordpress.us11.list-manage.com/subscribe/post?u=e33059783dca94dc78ba9c2cf&amp;id=640e1de445&amp;f_id=00c68ce0f0"
-      method="post"
-      id="mc-embedded-subscribe-form"
-      name="mc-embedded-subscribe-form"
-      target="_blank"
-      novalidate
-      style="width:100%;"
-    >
+    <form action="https://wordpress.us11.list-manage.com/subscribe/post?u=e33059783dca94dc78ba9c2cf&amp;id=640e1de445&amp;f_id=00c68ce0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate style="width:100%;">
       <div class="newsletter__form">
         <input type="email" name="EMAIL" class="newsletter__input" placeholder="your@email.com" required>
         <button type="submit" name="subscribe" class="newsletter__btn"><span>JOIN →</span></button>
       </div>
-      <!-- Mailchimp anti-bot honeypot — do not remove -->
-      <div aria-hidden="true" style="position:absolute;left:-5000px;">
-        <input type="text" name="b_e33059783dca94dc78ba9c2cf_640e1de445" tabindex="-1" value="">
-      </div>
+      <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_e33059783dca94dc78ba9c2cf_640e1de445" tabindex="-1" value=""></div>
       <p class="newsletter__fine">No spam. Just the good stuff. Unsubscribe anytime.</p>
       <div id="mc-form-response" style="margin-top:12px;font-family:var(--font-body);font-size:13px;color:var(--cream);min-height:20px;text-align:center;"></div>
     </form>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer__bg-text">Stylish &amp; Healthy</div>
     <div class="footer__inner">
@@ -129,20 +86,10 @@
           <li><a href="blog.html" class="footer__nav-link">BLOG</a></li>
           <li><a href="shop.html" class="footer__nav-link">SHOP</a></li>
           <li><a href="index.html#about" class="footer__nav-link">ABOUT</a></li>
-          <li><a href="#" class="footer__nav-link">CONTACT</a></li>
-          <li><a href="#" class="footer__nav-link">PRIVACY POLICY</a></li>
         </ul>
       </div>
-      <div>
+      <div id="footer-latest">
         <p class="footer__heading">LATEST</p>
-        <a href="article.html" class="footer__article-link">
-          <p class="footer__article-title">The Morning Ritual That Changed Everything About My Skin</p>
-          <p class="footer__article-date">April 14, 2025</p>
-        </a>
-        <a href="article.html" class="footer__article-link">
-          <p class="footer__article-title">How I Rebuilt My Evening Routine From Scratch</p>
-          <p class="footer__article-date">April 8, 2025</p>
-        </a>
       </div>
       <div>
         <p class="footer__heading">FOLLOW</p>
@@ -155,57 +102,63 @@
     </div>
     <div class="footer__bottom container">
       <p class="footer__copy">© 2025 Stylish and Healthy. All rights reserved.</p>
-      <p class="footer__copy">stylishandhealthy.com</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    // Render all posts — posts.js already loaded in <head>
-    const imgStyle = 'width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(0.9) sepia(0.08);transition:transform 500ms ease-in-out;';
-
-    function renderGrid(posts) {
-      const grid = document.getElementById('blog-grid-all');
-      if (!grid) return;
-      if (!posts || posts.length === 0) {
-        grid.innerHTML = '<p style="font-family:var(--font-display);font-style:italic;font-size:22px;color:rgba(13,11,8,0.35);grid-column:1/-1;text-align:center;padding:40px 0;">No posts yet.</p>';
+    function buildGrid(list) {
+      var grid = document.getElementById('blog-grid');
+      if (!list || list.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1;font-family:var(--font-display);font-style:italic;font-size:20px;color:rgba(13,11,8,0.35);">No posts found.</p>';
         return;
       }
-      grid.innerHTML = posts.map(p => `
-        <article class="card card-article reveal" data-category="${p.category}" onclick="location.href='post.html?slug=${p.slug}'" style="cursor:pointer;">
-          <div class="card__image"><img src="${p.image || 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&q=80'}" alt="" style="${imgStyle}"></div>
-          <div class="card__body">
-            <span class="card__tag">${p.category.toUpperCase()}</span>
-            <h3 class="card__title">${p.title}</h3>
-          </div>
-        </article>`).join('');
-      setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 50);
+      var html = '';
+      for (var i = 0; i < list.length; i++) {
+        var p = list[i];
+        var img = p.image || 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&q=80';
+        html += '<article class="card reveal visible" data-cat="' + p.category + '" onclick="location.href=\'post.html?slug=' + p.slug + '\'" style="cursor:pointer;">';
+        html += '<div class="card__image"><img src="' + img + '" alt="" style="width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(0.9) sepia(0.08);"></div>';
+        html += '<div class="card__body"><span class="card__tag">' + p.category.toUpperCase() + '</span><h3 class="card__title">' + p.title + '</h3></div>';
+        html += '</article>';
+      }
+      grid.innerHTML = html;
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof POSTS === 'undefined') {
-        document.getElementById('blog-grid-all').innerHTML = '<p style="font-family:var(--font-display);font-style:italic;font-size:22px;color:rgba(13,11,8,0.35);grid-column:1/-1;text-align:center;padding:40px 0;">Could not load posts — check that js/posts.js is uploaded to GitHub.</p>';
-        return;
-      }
-      renderGrid(POSTS);
+    if (typeof POSTS !== 'undefined') {
+      buildGrid(POSTS);
+    } else {
+      document.getElementById('blog-grid').innerHTML = '<p style="grid-column:1/-1;font-family:var(--font-display);font-style:italic;font-size:20px;color:red;">ERROR: posts.js not loaded. Check the js/ folder on GitHub.</p>';
+    }
 
-      // Filter buttons
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          const filter = btn.dataset.filter;
-          renderGrid(filter === 'all' ? POSTS : POSTS.filter(p => p.category === filter));
-        });
+    // Footer latest
+    var fl = document.getElementById('footer-latest');
+    if (fl && typeof POSTS !== 'undefined') {
+      var ftHtml = '<p class="footer__heading">LATEST</p>';
+      for (var i = 0; i < Math.min(3, POSTS.length); i++) {
+        ftHtml += '<a href="post.html?slug=' + POSTS[i].slug + '" class="footer__article-link"><p class="footer__article-title">' + POSTS[i].title + '</p><p class="footer__article-date">' + POSTS[i].date + '</p></a>';
+      }
+      fl.innerHTML = ftHtml;
+    }
+
+    // Filter buttons
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    for (var i = 0; i < filterBtns.length; i++) {
+      filterBtns[i].addEventListener('click', function() {
+        for (var j = 0; j < filterBtns.length; j++) filterBtns[j].classList.remove('active');
+        this.classList.add('active');
+        var f = this.getAttribute('data-filter');
+        if (f === 'all') {
+          buildGrid(POSTS);
+        } else {
+          var filtered = [];
+          for (var k = 0; k < POSTS.length; k++) {
+            if (POSTS[k].category === f) filtered.push(POSTS[k]);
+          }
+          buildGrid(filtered);
+        }
       });
-
-      // Support ?cat= URL param
-      const cat = new URLSearchParams(window.location.search).get('cat');
-      if (cat) {
-        const btn = document.querySelector(`[data-filter="${cat}"]`);
-        if (btn) btn.click();
-      }
-    });
+    }
   </script>
 </body>
 </html>
