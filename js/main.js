@@ -64,11 +64,57 @@ document.addEventListener('DOMContentLoaded', () => {
     goldLines.forEach(line => lineObserver.observe(line));
   }
 
-  /* ── Duplicate Marquee for seamless loop ─────────────────── */
-  const marqueeTrack = document.querySelector('.marquee-track');
-  if (marqueeTrack) {
-    const clone = marqueeTrack.cloneNode(true);
-    marqueeTrack.parentElement.appendChild(clone);
+  /* ── Mailchimp Newsletter Form (AJAX) ───────────────────── */
+  const mcForm = document.getElementById('mc-embedded-subscribe-form');
+  if (mcForm) {
+    mcForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = mcForm.querySelector('input[name="EMAIL"]');
+      const responseEl = document.getElementById('mc-form-response');
+      const btn = mcForm.querySelector('button[type="submit"]');
+
+      if (!emailInput || !emailInput.value.trim()) {
+        if (responseEl) { responseEl.textContent = 'Please enter your email address.'; responseEl.style.color = '#D4A090'; }
+        return;
+      }
+
+      // Disable button while submitting
+      if (btn) { btn.disabled = true; btn.querySelector('span').textContent = 'JOINING...'; }
+
+      // Mailchimp requires JSONP — swap /post for /post-json and add c= callback
+      const action = mcForm.action
+        .replace('/post?', '/post-json?')
+        .replace('/post-json?', '/post-json?')
+        + '&c=mailchimpCallback';
+
+      const params = new URLSearchParams(new FormData(mcForm));
+      const script = document.createElement('script');
+      script.src = action + '&' + params.toString();
+
+      window.mailchimpCallback = function(data) {
+        script.remove();
+        delete window.mailchimpCallback;
+        if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'JOIN →'; }
+        if (data.result === 'success') {
+          if (responseEl) { responseEl.textContent = '✓ You\'re in. Welcome to the ritual.'; responseEl.style.color = '#C9A263'; }
+          emailInput.value = '';
+        } else {
+          // Strip Mailchimp's HTML tags from error message
+          const msg = data.msg ? data.msg.replace(/<[^>]*>/g, '') : 'Something went wrong. Please try again.';
+          if (responseEl) { responseEl.textContent = msg.includes('already subscribed') ? 'You\'re already subscribed.' : msg; responseEl.style.color = '#D4A090'; }
+        }
+      };
+
+      // Timeout fallback
+      const timeout = setTimeout(() => {
+        script.remove();
+        if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'JOIN →'; }
+        if (responseEl) { responseEl.textContent = 'Request timed out. Please try again.'; responseEl.style.color = '#D4A090'; }
+      }, 8000);
+
+      script.onload = () => clearTimeout(timeout);
+      document.head.appendChild(script);
+    });
   }
 
 });
