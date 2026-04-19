@@ -29,6 +29,7 @@
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e33059783dca94dc78ba9c2cf/cd90e839a2776072868d7fd83.js");</script>
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/posts.js"></script>
 </head>
 <body>
 
@@ -158,50 +159,53 @@
     </div>
   </footer>
 
-  <script src="js/posts.js"></script>
   <script src="js/main.js"></script>
   <script>
-    // Render all posts
+    // Render all posts — posts.js already loaded in <head>
     const imgStyle = 'width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(0.9) sepia(0.08);transition:transform 500ms ease-in-out;';
 
     function renderGrid(posts) {
       const grid = document.getElementById('blog-grid-all');
+      if (!grid) return;
+      if (!posts || posts.length === 0) {
+        grid.innerHTML = '<p style="font-family:var(--font-display);font-style:italic;font-size:22px;color:rgba(13,11,8,0.35);grid-column:1/-1;text-align:center;padding:40px 0;">No posts yet.</p>';
+        return;
+      }
       grid.innerHTML = posts.map(p => `
         <article class="card card-article reveal" data-category="${p.category}" onclick="location.href='post.html?slug=${p.slug}'" style="cursor:pointer;">
-          <div class="card__image"><img src="${p.image}" alt="" style="${imgStyle}"></div>
+          <div class="card__image"><img src="${p.image || 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&q=80'}" alt="" style="${imgStyle}"></div>
           <div class="card__body">
             <span class="card__tag">${p.category.toUpperCase()}</span>
             <h3 class="card__title">${p.title}</h3>
           </div>
         </article>`).join('');
-      // Re-trigger reveal observer on new elements
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-        el.style.opacity = '0'; el.style.transform = 'translateY(24px)';
-        el.style.transition = 'opacity 700ms ease, transform 700ms ease';
-      });
       setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 50);
     }
 
-    renderGrid(POSTS);
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof POSTS === 'undefined') {
+        document.getElementById('blog-grid-all').innerHTML = '<p style="font-family:var(--font-display);font-style:italic;font-size:22px;color:rgba(13,11,8,0.35);grid-column:1/-1;text-align:center;padding:40px 0;">Could not load posts — check that js/posts.js is uploaded to GitHub.</p>';
+        return;
+      }
+      renderGrid(POSTS);
 
-    // Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        const filtered = filter === 'all' ? POSTS : POSTS.filter(p => p.category === filter);
-        renderGrid(filtered);
+      // Filter buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          renderGrid(filter === 'all' ? POSTS : POSTS.filter(p => p.category === filter));
+        });
       });
-    });
 
-    // Support ?cat= URL param
-    const cat = new URLSearchParams(window.location.search).get('cat');
-    if (cat) {
-      const btn = document.querySelector(`[data-filter="${cat}"]`);
-      if (btn) btn.click();
-    }
+      // Support ?cat= URL param
+      const cat = new URLSearchParams(window.location.search).get('cat');
+      if (cat) {
+        const btn = document.querySelector(`[data-filter="${cat}"]`);
+        if (btn) btn.click();
+      }
+    });
   </script>
 </body>
 </html>
