@@ -11,6 +11,7 @@
 }
 
 .article-page:not(.growth-factor-article) #cdot { display: none !important; }
+.article-page:not(.growth-factor-article) .reading-progress { display: none !important; }
 .article-page:not(.growth-factor-article) a,
 .article-page:not(.growth-factor-article) summary { cursor: pointer; }
 
@@ -91,6 +92,8 @@
 }
 
 .article-page:not(.growth-factor-article) .article-author-box {
+  display: block !important;
+  grid-template-columns: none !important;
   max-width: 720px !important;
   margin: 0 !important;
   padding: 17px 0 !important;
@@ -105,8 +108,11 @@
   text-align: left !important;
 }
 
-.article-page:not(.growth-factor-article) .article-author-box p { margin: 3px 0 !important; font-size: .78rem !important; line-height: 1.6 !important; }
-.article-page:not(.growth-factor-article) .article-meta { justify-content: flex-start !important; margin-top: 17px !important; color: var(--editorial-muted) !important; font-size: .76rem !important; }
+.article-page:not(.growth-factor-article) .article-author-box::before,
+.article-page:not(.growth-factor-article) .article-author-box::after { display: none !important; content: none !important; }
+.article-page:not(.growth-factor-article) .article-author-box p { grid-column: auto !important; margin: 3px 0 !important; padding: 0 !important; border: 0 !important; font-size: .78rem !important; line-height: 1.6 !important; }
+.article-page:not(.growth-factor-article) .article-meta { justify-content: flex-start !important; gap: 8px !important; margin-top: 17px !important; color: var(--editorial-muted) !important; font-size: .76rem !important; }
+.article-page:not(.growth-factor-article) .article-meta > span:not(.meta-dot) { width: auto !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; font-size: inherit !important; font-weight: 400 !important; }
 .article-page:not(.growth-factor-article) .meta-dot { width: 3px !important; height: 3px !important; background: #8b927d !important; }
 
 .article-page:not(.growth-factor-article) .article-wrap {
@@ -248,6 +254,100 @@
 .article-page:not(.growth-factor-article) .disclaimer { margin-top: 46px !important; padding-top: 24px !important; border-color: var(--editorial-line) !important; color: var(--editorial-muted) !important; line-height: 1.65 !important; }
 .article-page:not(.growth-factor-article) .signature { margin-top: 34px !important; color: #7a654f !important; font-size: 1.3rem !important; }
 
+/* Bring legacy article modules into the same restrained editorial system. */
+.article-page:not(.growth-factor-article) .reason-card,
+.article-page:not(.growth-factor-article) .fit-card,
+.article-page:not(.growth-factor-article) .ing-card,
+.article-page:not(.growth-factor-article) .qp-card,
+.article-page:not(.growth-factor-article) .myth-card,
+.article-page:not(.growth-factor-article) .claim-card,
+.article-page:not(.growth-factor-article) .product-card,
+.article-page:not(.growth-factor-article) .verdict-card,
+.article-page:not(.growth-factor-article) .decision-card,
+.article-page:not(.growth-factor-article) .mini-card,
+.article-page:not(.growth-factor-article) .dose-card,
+.article-page:not(.growth-factor-article) .routine-card,
+.article-page:not(.growth-factor-article) .winner-card,
+.article-page:not(.growth-factor-article) .snapshot-item,
+.article-page:not(.growth-factor-article) .product-fact,
+.article-page:not(.growth-factor-article) .quick-fact,
+.article-page:not(.growth-factor-article) .fact,
+.article-page:not(.growth-factor-article) .source-tier,
+.article-page:not(.growth-factor-article) .score-block,
+.article-page:not(.growth-factor-article) .rating-item,
+.article-page:not(.growth-factor-article) .product-spotlight,
+.article-page:not(.growth-factor-article) .review-score-card,
+.article-page:not(.growth-factor-article) .rating-panel,
+.article-page:not(.growth-factor-article) .verdict-banner,
+.article-page:not(.growth-factor-article) .bottom-line,
+.article-page:not(.growth-factor-article) .evidence-meter {
+  border: 1px solid var(--editorial-line) !important;
+  border-radius: 6px !important;
+  background: var(--editorial-paper) !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) .reason-grid,
+.article-page:not(.growth-factor-article) .fit-grid,
+.article-page:not(.growth-factor-article) .claim-grid,
+.article-page:not(.growth-factor-article) .myth-grid,
+.article-page:not(.growth-factor-article) .timeline-grid,
+.article-page:not(.growth-factor-article) .score-grid,
+.article-page:not(.growth-factor-article) .product-facts,
+.article-page:not(.growth-factor-article) .product-pros-cons,
+.article-page:not(.growth-factor-article) .quick-picks {
+  gap: 12px !important;
+}
+
+.article-page:not(.growth-factor-article) .promise-box,
+.article-page:not(.growth-factor-article) .pull-quote,
+.article-page:not(.growth-factor-article) .mini-note,
+.article-page:not(.growth-factor-article) .science-note,
+.article-page:not(.growth-factor-article) .study-callout,
+.article-page:not(.growth-factor-article) .compact-note,
+.article-page:not(.growth-factor-article) .bottom-line-callout,
+.article-page:not(.growth-factor-article) .editor-note,
+.article-page:not(.growth-factor-article) .caution,
+.article-page:not(.growth-factor-article) .warning {
+  border: 0 !important;
+  border-left: 3px solid #788363 !important;
+  border-radius: 0 !important;
+  background: var(--editorial-wash) !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) .article-share-panel,
+.article-page:not(.growth-factor-article) .seo-context-links,
+.article-page:not(.growth-factor-article) .source-details,
+.article-page:not(.growth-factor-article) .faq-section,
+.article-page:not(.growth-factor-article) .references {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) .faq-list { gap: 0 !important; }
+.article-page:not(.growth-factor-article) .faq-list .faq-item,
+.article-page:not(.growth-factor-article) .faq-section .faq-item {
+  margin: 0 !important;
+  border: 0 !important;
+  border-top: 1px solid var(--editorial-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) .section-kicker,
+.article-page:not(.growth-factor-article) .reason-label,
+.article-page:not(.growth-factor-article) .fit-label,
+.article-page:not(.growth-factor-article) .qp-label,
+.article-page:not(.growth-factor-article) .myth-label,
+.article-page:not(.growth-factor-article) .evidence-label,
+.article-page:not(.growth-factor-article) .verdict-label {
+  color: #667054 !important;
+  font-size: .67rem !important;
+  letter-spacing: .14em !important;
+}
+
 /* Script-injected recommendations are shared by the whole blog. */
 .article-page:not(.growth-factor-article) .article-recommendations { margin: 0 !important; padding: 64px max(24px, calc((100% - 1120px) / 2)) 72px !important; border: 1px solid var(--editorial-line) !important; border-width: 1px 0 0 !important; background: #f4f1e9 !important; }
 .article-page:not(.growth-factor-article) .article-recommendations-kicker { display: block; margin: 0 0 11px !important; color: #667054 !important; font-size: .68rem !important; font-weight: 700 !important; letter-spacing: .16em !important; text-transform: uppercase; }
@@ -296,4 +396,3 @@
   .article-page:not(.growth-factor-article) .article-recommendation-copy { padding: 13px 14px; }
   .article-page:not(.growth-factor-article) .article-recommendation-title { font-size: .94rem; }
 }
-
