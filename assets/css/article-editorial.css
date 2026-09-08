@@ -192,7 +192,7 @@
 
 .article-page:not(.growth-factor-article) .warning-box { border-left-color: #a87f42 !important; background: #f8f3e8 !important; }
 .article-page:not(.growth-factor-article) .article-internal-links { border-left-color: #d58d9b !important; background: #f8eef0 !important; }
-.article-page:not(.growth-factor-article) .box-label { margin-bottom: 9px !important; color: #626d50 !important; font-size: .67rem !important; letter-spacing: .16em !important; }
+.article-page:not(.growth-factor-article) .box-label { margin-bottom: 9px !important; color: #4f5d42 !important; font-size: .67rem !important; letter-spacing: .16em !important; }
 .article-page:not(.growth-factor-article) .warning-box .box-label { color: #866634 !important; }
 .article-page:not(.growth-factor-article) .quick-answer p,
 .article-page:not(.growth-factor-article) .science-box p,
@@ -287,6 +287,37 @@
   box-shadow: none !important;
 }
 
+.article-page:not(.growth-factor-article) :is(
+  .reason-card,
+  .fit-card,
+  .ing-card,
+  .qp-card,
+  .myth-card,
+  .claim-card,
+  .product-card,
+  .verdict-card,
+  .decision-card,
+  .mini-card,
+  .dose-card,
+  .routine-card,
+  .winner-card,
+  .snapshot-item,
+  .product-fact,
+  .quick-fact,
+  .fact,
+  .source-tier,
+  .score-block,
+  .rating-item,
+  .product-spotlight,
+  .review-score-card,
+  .rating-panel,
+  .verdict-banner,
+  .bottom-line,
+  .evidence-meter
+) :is(p, li, strong, em, span, h2, h3, h4) {
+  color: #39352f !important;
+}
+
 .article-page:not(.growth-factor-article) .reason-grid,
 .article-page:not(.growth-factor-article) .fit-grid,
 .article-page:not(.growth-factor-article) .claim-grid,
@@ -314,6 +345,25 @@
   border-radius: 0 !important;
   background: var(--editorial-wash) !important;
   box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) :is(
+  .promise-box,
+  .pull-quote,
+  .mini-note,
+  .science-note,
+  .study-callout,
+  .compact-note,
+  .bottom-line-callout,
+  .editor-note,
+  .caution,
+  .warning
+) :is(p, li, strong, em, span, h2, h3, h4) {
+  color: #39352f !important;
+}
+
+.article-page:not(.growth-factor-article) .mobile-cell-label {
+  display: none !important;
 }
 
 .article-page:not(.growth-factor-article) .article-share-panel,
@@ -346,6 +396,345 @@
   color: #667054 !important;
   font-size: .67rem !important;
   letter-spacing: .14em !important;
+}
+
+/* Component safety layer.
+   Older articles define many of these modules inline. Keep their structure, but
+   neutralise decorative layers and restore readable foreground/background pairs. */
+.article-page:not(.growth-factor-article) .quick-answer,
+.article-page:not(.growth-factor-article) .science-box,
+.article-page:not(.growth-factor-article) .warning-box,
+.article-page:not(.growth-factor-article) .routine-box,
+.article-page:not(.growth-factor-article) .article-internal-links,
+.article-page:not(.growth-factor-article) .viral-hook,
+.article-page:not(.growth-factor-article) .bottom-line,
+.article-page:not(.growth-factor-article) .quick-summary,
+.article-page:not(.growth-factor-article) .download-cta,
+.article-page:not(.growth-factor-article) .neck-verdict,
+.article-page:not(.growth-factor-article) .answer-box,
+.article-page:not(.growth-factor-article) .product-score,
+.article-page:not(.growth-factor-article) .review-score-card,
+.article-page:not(.growth-factor-article) .rating-panel {
+  position: relative !important;
+  overflow: visible !important;
+  color: var(--editorial-ink) !important;
+  border: 1px solid var(--editorial-line) !important;
+  border-left: 3px solid #788363 !important;
+  border-radius: 6px !important;
+  background: var(--editorial-wash) !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) .quick-answer::before,
+.article-page:not(.growth-factor-article) .quick-answer::after,
+.article-page:not(.growth-factor-article) .science-box::before,
+.article-page:not(.growth-factor-article) .science-box::after,
+.article-page:not(.growth-factor-article) .warning-box::before,
+.article-page:not(.growth-factor-article) .warning-box::after,
+.article-page:not(.growth-factor-article) .routine-box::before,
+.article-page:not(.growth-factor-article) .routine-box::after,
+.article-page:not(.growth-factor-article) .article-internal-links::before,
+.article-page:not(.growth-factor-article) .article-internal-links::after,
+.article-page:not(.growth-factor-article) .viral-hook::before,
+.article-page:not(.growth-factor-article) .viral-hook::after,
+.article-page:not(.growth-factor-article) .bottom-line::before,
+.article-page:not(.growth-factor-article) .bottom-line::after,
+.article-page:not(.growth-factor-article) .quick-summary::before,
+.article-page:not(.growth-factor-article) .quick-summary::after,
+.article-page:not(.growth-factor-article) .neck-verdict::before,
+.article-page:not(.growth-factor-article) .neck-verdict::after,
+.article-page:not(.growth-factor-article) .answer-box::before,
+.article-page:not(.growth-factor-article) .answer-box::after {
+  display: none !important;
+  content: none !important;
+}
+
+.article-page:not(.growth-factor-article) .quick-answer > *,
+.article-page:not(.growth-factor-article) .science-box > *,
+.article-page:not(.growth-factor-article) .warning-box > *,
+.article-page:not(.growth-factor-article) .routine-box > *,
+.article-page:not(.growth-factor-article) .article-internal-links > *,
+.article-page:not(.growth-factor-article) .viral-hook > *,
+.article-page:not(.growth-factor-article) .bottom-line > *,
+.article-page:not(.growth-factor-article) .quick-summary > *,
+.article-page:not(.growth-factor-article) .download-cta > *,
+.article-page:not(.growth-factor-article) .neck-verdict > *,
+.article-page:not(.growth-factor-article) .answer-box > * {
+  position: relative !important;
+  z-index: auto !important;
+  color: inherit !important;
+}
+
+.article-page:not(.growth-factor-article) .quick-answer p,
+.article-page:not(.growth-factor-article) .science-box p,
+.article-page:not(.growth-factor-article) .warning-box p,
+.article-page:not(.growth-factor-article) .routine-box p,
+.article-page:not(.growth-factor-article) .article-internal-links p,
+.article-page:not(.growth-factor-article) .viral-hook p,
+.article-page:not(.growth-factor-article) .bottom-line p,
+.article-page:not(.growth-factor-article) .quick-summary p,
+.article-page:not(.growth-factor-article) .download-cta p,
+.article-page:not(.growth-factor-article) .neck-verdict p,
+.article-page:not(.growth-factor-article) .answer-box p,
+.article-page:not(.growth-factor-article) .product-score p,
+.article-page:not(.growth-factor-article) .review-score-card p,
+.article-page:not(.growth-factor-article) .rating-panel p {
+  color: #39352f !important;
+}
+
+.article-page:not(.growth-factor-article) .quick-answer h2,
+.article-page:not(.growth-factor-article) .quick-answer h3,
+.article-page:not(.growth-factor-article) .science-box h2,
+.article-page:not(.growth-factor-article) .science-box h3,
+.article-page:not(.growth-factor-article) .warning-box h2,
+.article-page:not(.growth-factor-article) .warning-box h3,
+.article-page:not(.growth-factor-article) .routine-box h2,
+.article-page:not(.growth-factor-article) .routine-box h3,
+.article-page:not(.growth-factor-article) .viral-hook h2,
+.article-page:not(.growth-factor-article) .viral-hook h3,
+.article-page:not(.growth-factor-article) .bottom-line h2,
+.article-page:not(.growth-factor-article) .bottom-line h3,
+.article-page:not(.growth-factor-article) .quick-summary h2,
+.article-page:not(.growth-factor-article) .quick-summary h3,
+.article-page:not(.growth-factor-article) .download-cta h2,
+.article-page:not(.growth-factor-article) .download-cta h3,
+.article-page:not(.growth-factor-article) .neck-verdict h2,
+.article-page:not(.growth-factor-article) .neck-verdict h3,
+.article-page:not(.growth-factor-article) .product-score h2,
+.article-page:not(.growth-factor-article) .product-score h3,
+.article-page:not(.growth-factor-article) .review-score-card h2,
+.article-page:not(.growth-factor-article) .review-score-card h3,
+.article-page:not(.growth-factor-article) .rating-panel h2,
+.article-page:not(.growth-factor-article) .rating-panel h3,
+.article-page:not(.growth-factor-article) .verdict-banner h2,
+.article-page:not(.growth-factor-article) .verdict-banner h3,
+.article-page:not(.growth-factor-article) .faq-item h3,
+.article-page:not(.growth-factor-article) .author-box h2,
+.article-page:not(.growth-factor-article) .author-box h3 {
+  margin: 0 0 10px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--editorial-ink) !important;
+  line-height: 1.25 !important;
+}
+
+.article-page:not(.growth-factor-article) :is(
+  .quick-answer,
+  .science-box,
+  .warning-box,
+  .routine-box,
+  .article-internal-links,
+  .viral-hook,
+  .bottom-line,
+  .quick-summary,
+  .download-cta,
+  .neck-verdict,
+  .answer-box
+) :is(p, li, strong, em, span, h2, h3, h4) {
+  color: #39352f !important;
+}
+
+.article-page:not(.growth-factor-article) .article-card h2 em,
+.article-page:not(.growth-factor-article) .article-card h3 em {
+  color: #687254 !important;
+}
+
+.article-page:not(.growth-factor-article) .reason-label,
+.article-page:not(.growth-factor-article) .fit-label,
+.article-page:not(.growth-factor-article) .qp-label,
+.article-page:not(.growth-factor-article) .myth-label,
+.article-page:not(.growth-factor-article) .study-label,
+.article-page:not(.growth-factor-article) .evidence-badge.low,
+.article-page:not(.growth-factor-article) .verdict,
+.article-page:not(.growth-factor-article) .myth-verdict-badge,
+.article-page:not(.growth-factor-article) .myth-badge {
+  color: #455238 !important;
+}
+
+.article-page:not(.growth-factor-article) .box-label,
+.article-page:not(.growth-factor-article) .section-kicker,
+.article-page:not(.growth-factor-article) .share-kicker {
+  color: #4f5d42 !important;
+}
+
+.article-page:not(.growth-factor-article) .ing-tag.hero {
+  color: #fffdf9 !important;
+  background: #4e633f !important;
+}
+
+.article-page:not(.growth-factor-article) .grade-badge.no {
+  color: #78374a !important;
+  background: #f7dde3 !important;
+  border-color: #e8bdc8 !important;
+}
+
+.article-page:not(.growth-factor-article) .test-day > span {
+  color: #536447 !important;
+}
+
+.article-page:not(.growth-factor-article) .myth-header {
+  color: var(--editorial-ink) !important;
+  background: transparent !important;
+}
+
+.article-page:not(.growth-factor-article) .myth-number {
+  color: var(--editorial-olive) !important;
+}
+
+.article-page:not(.growth-factor-article) .myth-claim {
+  color: var(--editorial-ink) !important;
+}
+
+/* Scores and review summaries use one high-contrast light treatment. */
+.article-page:not(.growth-factor-article) .product-score,
+.article-page:not(.growth-factor-article) .review-score-card,
+.article-page:not(.growth-factor-article) .rating-panel,
+.article-page:not(.growth-factor-article) .score-block {
+  margin: 38px 0 !important;
+  padding: 28px !important;
+  color: var(--editorial-ink) !important;
+  background: #eef0e8 !important;
+}
+
+.article-page:not(.growth-factor-article) .score-head,
+.article-page:not(.growth-factor-article) .review-score-top {
+  display: grid !important;
+  grid-template-columns: minmax(130px, .34fr) minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+
+.article-page:not(.growth-factor-article) .score-number,
+.article-page:not(.growth-factor-article) .score-number strong,
+.article-page:not(.growth-factor-article) .score-num,
+.article-page:not(.growth-factor-article) .rating-score strong,
+.article-page:not(.growth-factor-article) .ps-score-num {
+  color: #4e633f !important;
+}
+
+.article-page:not(.growth-factor-article) .score-copy,
+.article-page:not(.growth-factor-article) .score-copy h2,
+.article-page:not(.growth-factor-article) .score-copy h3,
+.article-page:not(.growth-factor-article) .score-copy p,
+.article-page:not(.growth-factor-article) .score-text,
+.article-page:not(.growth-factor-article) .score-den,
+.article-page:not(.growth-factor-article) .rating-score span,
+.article-page:not(.growth-factor-article) .rating-verdict,
+.article-page:not(.growth-factor-article) .rating-note,
+.article-page:not(.growth-factor-article) .score-method,
+.article-page:not(.growth-factor-article) .score-method strong,
+.article-page:not(.growth-factor-article) .citation-note,
+.article-page:not(.growth-factor-article) .score-number small,
+.article-page:not(.growth-factor-article) .rating-number small {
+  color: #49443d !important;
+}
+
+.article-page:not(.growth-factor-article) .score-grid > div,
+.article-page:not(.growth-factor-article) .rating-item {
+  min-width: 0 !important;
+  padding: 15px !important;
+  border: 1px solid #d4d8cb !important;
+  border-radius: 4px !important;
+  background: rgba(255, 253, 249, .78) !important;
+}
+
+.article-page:not(.growth-factor-article) .score-grid strong,
+.article-page:not(.growth-factor-article) .rating-item strong,
+.article-page:not(.growth-factor-article) .rating-item b {
+  color: #425337 !important;
+}
+
+.article-page:not(.growth-factor-article) .score-grid span,
+.article-page:not(.growth-factor-article) .rating-item span,
+.article-page:not(.growth-factor-article) .rating-item p,
+.article-page:not(.growth-factor-article) .rating-row label,
+.article-page:not(.growth-factor-article) .rating-row b {
+  color: #5f5a52 !important;
+}
+
+.article-page:not(.growth-factor-article) .rating-track {
+  background: #d6dacd !important;
+}
+
+.article-page:not(.growth-factor-article) .rating-fill {
+  background: #667a55 !important;
+}
+
+/* Source and FAQ containers should never inherit the old dark-card palette. */
+.article-page:not(.growth-factor-article) section.references,
+.article-page:not(.growth-factor-article) div.references,
+.article-page:not(.growth-factor-article) details.references,
+.article-page:not(.growth-factor-article) .source-details,
+.article-page:not(.growth-factor-article) .faq-section,
+.article-page:not(.growth-factor-article) .article-share-panel,
+.article-page:not(.growth-factor-article) .author-box {
+  color: var(--editorial-ink) !important;
+  border-color: var(--editorial-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.article-page:not(.growth-factor-article) section.references h2,
+.article-page:not(.growth-factor-article) div.references h2,
+.article-page:not(.growth-factor-article) details.references h2,
+.article-page:not(.growth-factor-article) .source-details h2,
+.article-page:not(.growth-factor-article) .faq-section > h2 {
+  color: var(--editorial-ink) !important;
+}
+
+.article-page:not(.growth-factor-article) .references summary,
+.article-page:not(.growth-factor-article) .source-details summary,
+.article-page:not(.growth-factor-article) .references li,
+.article-page:not(.growth-factor-article) .references strong,
+.article-page:not(.growth-factor-article) .references em,
+.article-page:not(.growth-factor-article) .source-details li,
+.article-page:not(.growth-factor-article) .source-details strong,
+.article-page:not(.growth-factor-article) .source-details em {
+  color: #49443d !important;
+}
+
+.article-page:not(.growth-factor-article) .references a,
+.article-page:not(.growth-factor-article) .source-details a {
+  color: #4e633f !important;
+  overflow-wrap: anywhere;
+}
+
+.article-page:not(.growth-factor-article) .faq-item h3 {
+  font-size: 1.12rem !important;
+}
+
+.article-page:not(.growth-factor-article) .faq-item p {
+  margin: 0 !important;
+}
+
+/* Keep true controls readable after the global article link colour is applied. */
+.article-page:not(.growth-factor-article) .article-card a.product-cta.primary,
+.article-page:not(.growth-factor-article) .article-card a.purchase-link,
+.article-page:not(.growth-factor-article) .article-card a.affiliate-button,
+.article-page:not(.growth-factor-article) .article-card a.product-shop-button {
+  color: #fffdf9 !important;
+  background: #4e633f !important;
+  border-color: #4e633f !important;
+}
+
+.article-page:not(.growth-factor-article) .article-card a.share-button-pinterest {
+  color: #392f2c !important;
+  background: #f0cbd2 !important;
+  border-color: #dfabb6 !important;
+}
+
+.article-page:not(.growth-factor-article) img,
+.article-page:not(.growth-factor-article) svg,
+.article-page:not(.growth-factor-article) video,
+.article-page:not(.growth-factor-article) canvas {
+  max-width: 100%;
+}
+
+.article-page:not(.growth-factor-article) .article-card,
+.article-page:not(.growth-factor-article) .article-card * {
+  min-width: 0;
 }
 
 /* Script-injected recommendations are shared by the whole blog. */
@@ -382,6 +771,88 @@
   .article-page:not(.growth-factor-article) .article-recommendation-copy { min-height: 154px; padding: 15px 16px; }
   .article-page:not(.growth-factor-article) .article-recommendation-title { font-size: 1rem; }
   .article-page:not(.growth-factor-article) .article-recommendation-cta { padding-top: 13px; }
+  .article-page:not(.growth-factor-article) .quick-answer,
+  .article-page:not(.growth-factor-article) .science-box,
+  .article-page:not(.growth-factor-article) .warning-box,
+  .article-page:not(.growth-factor-article) .routine-box,
+  .article-page:not(.growth-factor-article) .article-internal-links,
+  .article-page:not(.growth-factor-article) .viral-hook,
+  .article-page:not(.growth-factor-article) .bottom-line,
+  .article-page:not(.growth-factor-article) .quick-summary,
+  .article-page:not(.growth-factor-article) .download-cta,
+  .article-page:not(.growth-factor-article) .neck-verdict,
+  .article-page:not(.growth-factor-article) .answer-box,
+  .article-page:not(.growth-factor-article) .product-score,
+  .article-page:not(.growth-factor-article) .review-score-card,
+  .article-page:not(.growth-factor-article) .rating-panel,
+  .article-page:not(.growth-factor-article) .score-block {
+    padding: 21px 19px !important;
+  }
+  .article-page:not(.growth-factor-article) .score-head,
+  .article-page:not(.growth-factor-article) .review-score-top {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    align-items: start !important;
+  }
+  .article-page:not(.growth-factor-article) .score-grid,
+  .article-page:not(.growth-factor-article) .rating-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .article-page:not(.growth-factor-article) .rating-row {
+    grid-template-columns: minmax(86px, 112px) minmax(0, 1fr) 36px !important;
+    gap: 8px !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+  .article-page:not(.growth-factor-article) .comparison-scroll,
+  .article-page:not(.growth-factor-article) .table-scroll {
+    overflow: visible !important;
+    border: 0 !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table thead {
+    display: none !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table tbody {
+    display: grid !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table tr {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    overflow: hidden;
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 5px !important;
+    background: var(--editorial-paper) !important;
+    box-shadow: none !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table td,
+  .article-page:not(.growth-factor-article) .comparison-table tbody tr:nth-child(even) td {
+    display: block !important;
+    width: 100% !important;
+    padding: 13px 14px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--editorial-line) !important;
+    background: transparent !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table td:last-child {
+    border-bottom: 0 !important;
+  }
+  .article-page:not(.growth-factor-article) .comparison-table .mobile-cell-label {
+    display: block !important;
+    margin-bottom: 4px;
+    color: #566447 !important;
+    font-size: .67rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .08em;
+    line-height: 1.35 !important;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 420px) {
